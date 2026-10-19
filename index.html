@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NUUHA Beauty - Double Cleanse Set</title>
+  <title>NUUHA Beauty - Double Cleanse Duo</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Font -->
@@ -12,186 +12,336 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    @keyframes pulse-subtle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    .cta-pulse {
+      animation: pulse-subtle 2.5s infinite ease-in-out;
+    }
   </style>
 </head>
-<body class="bg-[#FCFAF7] text-stone-800 antialiased pb-24 md:pb-0">
+<body class="bg-[#FAF7F2] text-stone-800 antialiased pb-24 md:pb-0 selection:bg-[#842A45] selection:text-white">
 
-  <!-- 1. Top Announcement Bar -->
-  <div class="bg-[#3D1420] text-[#F3E7EA] text-xs font-semibold text-center py-2 px-4 tracking-wide">
-    ✨ Formulasi Korea • Korean SRE Technology • Sesuai Kulit Sensitif & Berjerawat
+  <!-- 1. Top Urgency Banner with Live Countdown -->
+  <div class="bg-[#3D1420] text-[#F3E7EA] text-xs font-semibold py-2 px-4 sticky top-0 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>✨ Promosi Eksklusif Kempen Meta Ads • Penghantaran Percuma Semenanjung</span>
+      </div>
+      <div class="flex items-center gap-1.5 bg-black/30 px-3 py-1 rounded-full text-[11px] font-mono">
+        <span>Tawaran Berakhir:</span>
+        <span id="countdown" class="font-bold text-amber-300">02 : 45 : 12</span>
+      </div>
+    </div>
   </div>
 
   <!-- 2. Header / Navigation -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-stone-200">
+  <header class="bg-white/80 backdrop-blur-md border-b border-stone-200/80 sticky top-[37px] z-40 transition-all">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="text-2xl font-black tracking-widest text-[#3D1420]">NUUHA</span>
         <span class="text-[10px] tracking-widest text-stone-400 uppercase font-bold border-l pl-2 border-stone-300">Beauty</span>
       </div>
-      <a href="#offer" class="hidden sm:inline-flex items-center justify-center bg-[#3D1420] text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-[#5C1A2E] transition shadow-sm">
-        Dapatkan Set Sekarang
-      </a>
+      <div class="flex items-center gap-4">
+        <span class="hidden md:inline-block text-xs font-semibold text-stone-500">100% Original Korean Tech</span>
+        <a href="#offer" class="bg-[#3D1420] text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-[#5C1A2E] shadow-md hover:shadow-lg transition">
+          Dapatkan Set
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- 3. Hero Section (Meta Ads Hook) -->
-  <section class="max-w-6xl mx-auto px-4 pt-8 pb-12 md:py-16">
-    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-      <!-- Teks Kiri -->
-      <div class="text-center md:text-left space-y-4">
-        <div class="inline-flex items-center gap-1.5 bg-[#F3E7EA] text-[#3D1420] text-xs font-bold px-3.5 py-1.5 rounded-full">
-          <span>★★★★★</span> Dipercayai Ribuan Pengguna
+  <!-- 3. Hero Section -->
+  <section class="max-w-6xl mx-auto px-4 pt-8 pb-14 md:py-20">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <!-- Left Content -->
+      <div class="text-center md:text-left space-y-5">
+        <div class="inline-flex items-center gap-2 bg-[#F3E7EA] text-[#3D1420] text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">
+          <span class="text-amber-500">★★★★★</span> 4.9/5 Penilaian Pengguna
         </div>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-stone-900 leading-[1.15]">
           Double Cleanse,<br>
-          <span class="text-[#842A45]">Double The Glow.</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#842A45] to-[#B04B68]">Double The Glow.</span>
         </h1>
         <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
-          Pencuci muka biasa <strong>tak cukup</strong> untuk bersihkan pori tersumbat. Singkirkan sisa makeup degil & sunscreen tanpa merosakkan skin barrier dengan kombo dua langkah NUUHA Beauty.
+          Pencuci muka biasa <strong>gagal membersihkan liang pori sepenuhnya</strong>. Singkirkan sisa solekan kalis air & sunscreen degil tanpa mengikis kelembapan kulit anda dengan formula Korea 2-Langkah NUUHA Beauty.
         </p>
 
         <!-- Trust Badges List -->
-        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
-          <img src="Made In Korea.png" alt="Made in Korea" class="h-10 object-contain">
-          <img src="Halal Korea.png" alt="Halal Korea" class="h-10 object-contain">
-          <img src="Cruelty Free.png" alt="Cruelty Free" class="h-10 object-contain">
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-1">
+          <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-stone-200 shadow-sm">
+            <img src="Made In Korea.png" alt="Made in Korea" class="h-8 object-contain">
+            <span class="text-[11px] font-bold text-stone-700">Formulasi Korea</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-stone-200 shadow-sm">
+            <img src="Halal Korea.png" alt="Halal Korea" class="h-8 object-contain">
+            <span class="text-[11px] font-bold text-stone-700">Halal Certified</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-stone-200 shadow-sm">
+            <img src="Cruelty Free.png" alt="Cruelty Free" class="h-8 object-contain">
+            <span class="text-[11px] font-bold text-stone-700">Cruelty-Free</span>
+          </div>
         </div>
 
-        <div class="pt-4">
-          <a href="#offer" class="w-full sm:w-auto inline-block text-center bg-[#3D1420] text-white font-bold text-sm sm:text-base px-8 py-4 rounded-full shadow-lg shadow-[#3D1420]/20 hover:scale-[1.02] active:scale-95 transition">
-            Dapatkan Set Double Cleanse
+        <div class="pt-3">
+          <a href="#offer" class="cta-pulse w-full sm:w-auto inline-block text-center bg-[#3D1420] text-white font-extrabold text-sm sm:text-base px-9 py-4 rounded-full shadow-xl shadow-[#3D1420]/30 hover:bg-[#5C1A2E] transition">
+            DAPATKAN DOUBLE CLEANSE SET
           </a>
-          <p class="text-xs text-stone-400 mt-2">✓ Stok Terhad • Penghantaran Pantas</p>
+          <p class="text-xs text-stone-500 mt-2.5 flex items-center justify-center md:justify-start gap-2">
+            <span>🛡️ Jaminan Tulen 100%</span> • <span>📦 Penghantaran Pantas</span>
+          </p>
         </div>
       </div>
 
-      <!-- Gambar Kanan -->
-      <div class="relative">
-        <div class="absolute -inset-2 bg-gradient-to-tr from-[#F3E7EA] to-white rounded-3xl -z-10 blur-xl opacity-70"></div>
-        <img src="hero.jpg" alt="NUUHA Double Cleanse Set" class="w-full max-w-lg mx-auto rounded-2xl shadow-xl border border-stone-200">
+      <!-- Right Visual -->
+      <div class="relative group">
+        <div class="absolute -inset-2 bg-gradient-to-tr from-[#F3E7EA] via-amber-100 to-white rounded-3xl -z-10 blur-xl opacity-80 group-hover:opacity-100 transition"></div>
+        <img src="hero.jpg" alt="NUUHA Double Cleanse Set" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-white/60 object-cover transform group-hover:scale-[1.01] transition duration-300">
       </div>
     </div>
   </section>
 
-  <!-- 4. Mengapa Double Cleansing? (The Logic) -->
-  <section class="bg-white py-14 md:py-20 border-y border-stone-200">
+  <!-- 4. Key Ingredients Highlights (Menunjukkan Pemahaman Produk) -->
+  <section class="bg-[#F4ECE1]/60 py-12 border-y border-stone-200">
     <div class="max-w-5xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold text-[#842A45] uppercase tracking-widest">Sains Penjagaan Wajah</span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-900 mt-1 mb-3">
+      <p class="text-center text-xs font-bold text-[#842A45] tracking-widest uppercase mb-2">Bahan Aktif Premium</p>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-center text-stone-900 mb-8">Rahsia Kulit Bersih Tanpa Iritasi</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-2xl border border-stone-200 text-center shadow-sm hover:shadow-md transition">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-rose-100 text-[#842A45] flex items-center justify-center text-lg font-bold">🌿</div>
+          <h4 class="font-bold text-sm text-stone-900">Mugwort Extract</h4>
+          <p class="text-xs text-stone-500 mt-1">Menenangkan jerawat & kemerahan kulit sensitif.</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-stone-200 text-center shadow-sm hover:shadow-md transition">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-lg font-bold">🍇</div>
+          <h4 class="font-bold text-sm text-stone-900">Mulberry Extract</h4>
+          <p class="text-xs text-stone-500 mt-1">Mencerahkan tona kulit & kaya antioksidan.</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-stone-200 text-center shadow-sm hover:shadow-md transition">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-lg font-bold">🛡️</div>
+          <h4 class="font-bold text-sm text-stone-900">Ceramide + HA</h4>
+          <p class="text-xs text-stone-500 mt-1">Membaiki skin barrier & mengunci kelembapan.</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-stone-200 text-center shadow-sm hover:shadow-md transition">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold">💧</div>
+          <h4 class="font-bold text-sm text-stone-900">Low pH Formula</h4>
+          <p class="text-xs text-stone-500 mt-1">Mengekalkan keseimbangan asid semulajadi kulit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Educational 2-Step Routine Section -->
+  <section class="bg-white py-16 md:py-24 border-b border-stone-200">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-extrabold text-[#842A45] uppercase tracking-widest">Sains Penjagaan Wajah</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-1 mb-4">
           Kenapa 1 Pencuci Sahaja Tak Cukup?
         </h2>
-        <p class="text-stone-600 text-sm sm:text-base">
-          Minyak dan air tidak bercampur. Sisa kotoran pada muka anda terbahagi kepada dua jenis:
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          Kotoran berasaskan minyak (sebum, makeup, pelindung matahari) tidak larut dalam air. Anda wajib gunakan kaedah dua fasa ini:
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-8">
         <!-- Step 1 Card -->
-        <div class="bg-[#FAF8F5] p-6 sm:p-8 rounded-2xl border border-stone-200 flex flex-col justify-between hover:border-[#842A45]/40 transition">
+        <div class="bg-[#FCFAF7] p-6 sm:p-8 rounded-3xl border border-stone-200 flex flex-col justify-between hover:border-[#842A45] hover:shadow-lg transition">
           <div>
-            <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center justify-between mb-3">
               <span class="bg-[#3D1420] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase">Langkah 1: Oil-Based</span>
-              <span class="text-xs text-stone-400 font-semibold">Wajib Malam</span>
+              <span class="text-xs font-bold text-stone-400">Rutin Malam</span>
             </div>
             <h3 class="text-xl font-bold text-stone-900 mb-2">Mulberry Hydra Bright Cleansing Balm</h3>
             <p class="text-stone-600 text-sm leading-relaxed mb-6">
-              Mencairkan sisa solekan kalis air (waterproof makeup), sunscreen degil, dan lebihan sebum minyak di dasar liang pori tanpa pedih mata.
+              Tekstur sherbet yang cair menjadi minyak selembut sutera semasa diurut ke muka. Mencairkan kotoran kalis air paling degil tanpa memedihkan mata.
             </p>
           </div>
-          <img src="balm.jpg" alt="Cleansing Balm" class="w-full h-52 object-contain bg-white rounded-xl p-3 border border-stone-100">
+          <div class="bg-white p-4 rounded-2xl border border-stone-100 shadow-sm">
+            <img src="balm.jpg" alt="Cleansing Balm" class="w-full h-56 object-contain">
+          </div>
         </div>
 
         <!-- Step 2 Card -->
-        <div class="bg-[#FAF8F5] p-6 sm:p-8 rounded-2xl border border-stone-200 flex flex-col justify-between hover:border-[#842A45]/40 transition">
+        <div class="bg-[#FCFAF7] p-6 sm:p-8 rounded-3xl border border-stone-200 flex flex-col justify-between hover:border-[#842A45] hover:shadow-lg transition">
           <div>
-            <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center justify-between mb-3">
               <span class="bg-[#842A45] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase">Langkah 2: Water-Based</span>
-              <span class="text-xs text-stone-400 font-semibold">Pagi & Malam</span>
+              <span class="text-xs font-bold text-stone-400">Pagi & Malam</span>
             </div>
-            <h3 class="text-xl font-bold text-stone-900 mb-2">Mugwort Hydra Bright Gentle Daily Cleanser</h3>
+            <h3 class="text-xl font-bold text-stone-900 mb-2">Mugwort Hydra Bright Gentle Cleanser</h3>
             <p class="text-stone-600 text-sm leading-relaxed mb-6">
-              Buih lembut membersihkan sisa habuk, peluh, dan sel kulit mati. Mengekalkan kelembapan semulajadi kulit supaya tidak tegang atau kering.
+              Membersihkan sisa habuk halus, peluh, dan sel kulit mati berasaskan air. Formula buih mikro yang membersih lembut tanpa rasa kulit tegang atau kering.
             </p>
           </div>
-          <img src="cleanser.jpg" alt="Cleanser" class="w-full h-52 object-contain bg-white rounded-xl p-3 border border-stone-100">
+          <div class="bg-white p-4 rounded-2xl border border-stone-100 shadow-sm">
+            <img src="cleanser.jpg" alt="Gentle Cleanser" class="w-full h-56 object-contain">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. Routine Guide & Before After (Social Proof) -->
-  <section class="max-w-5xl mx-auto px-4 py-14 md:py-20">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div class="space-y-4">
-        <span class="text-xs font-bold text-[#842A45] uppercase tracking-widest">Keputusan Nyata</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 leading-tight">
-          Hasil Kulit Bersih Sempurna & Liang Pori Halus
+  <!-- 6. Real Results & Tutorial Visual -->
+  <section class="max-w-5xl mx-auto px-4 py-16 md:py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="space-y-5">
+        <span class="text-xs font-bold text-[#842A45] uppercase tracking-widest">Kesan Nyata</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-900 leading-tight">
+          Pori Bersih Sempurna, Bebas Tiny Bumps & Jerawat
         </h2>
         <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
-          Ramai pengguna mula perasan perubahan seawal minggu pertama. Tiada lagi masalah timbul tiny bumps atau jerawat akibat sisa kotoran yang tertinggal.
+          Kajian klinikal membuktikan <strong>98% pengguna mengakui kulit tidak berasa tegang</strong> dan <strong>96% melihat tona kulit semakin cerah & lembut</strong> selepas konsisten mengamalkan rutin Double Cleansing NUUHA.
         </p>
-        <div class="rounded-2xl overflow-hidden shadow-md border border-stone-200">
-          <img src="before-after.jpg" alt="Before and After" class="w-full object-cover">
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-stone-200">
+          <img src="before-after.jpg" alt="Before and After Results" class="w-full object-cover">
         </div>
       </div>
+
       <div>
-        <div class="rounded-2xl overflow-hidden shadow-md border border-stone-200">
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-stone-200">
           <img src="routine.jpg" alt="How to Use Routine" class="w-full object-cover">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. Offer Section (High Converting Pricing Box) -->
-  <section id="offer" class="max-w-3xl mx-auto px-4 py-12 md:py-16 text-center">
-    <div class="bg-gradient-to-b from-white to-[#F3E7EA] p-8 sm:p-12 rounded-3xl border border-rose-200 shadow-xl relative overflow-hidden">
-      <div class="inline-block bg-[#3D1420] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
-        Pek Lengkap Dua Beradik
+  <!-- 7. High-Converting Offer / Bundle Box -->
+  <section id="offer" class="max-w-3xl mx-auto px-4 py-16 text-center">
+    <div class="bg-gradient-to-b from-white via-rose-50/30 to-[#F3E7EA] p-8 sm:p-12 rounded-3xl border-2 border-rose-200 shadow-2xl relative overflow-hidden">
+      
+      <!-- Top badge -->
+      <div class="inline-block bg-[#3D1420] text-white text-xs font-extrabold px-5 py-2 rounded-full uppercase tracking-wider mb-5 shadow-sm">
+        🌟 Pek Paling Jimat & Popular
       </div>
       
       <h2 class="text-3xl sm:text-4xl font-black text-stone-900 mb-2">NUUHA Double Cleanse Set</h2>
-      <p class="text-stone-600 text-sm sm:text-base mb-6">Lengkapkan rutin harian anda untuk perlindungan kulit maksima.</p>
+      <p class="text-stone-600 text-sm sm:text-base mb-8">Satu set lengkap untuk penjagaan kulit yang sihat, bersih dan berseri.</p>
 
-      <div class="max-w-xs mx-auto bg-white/80 backdrop-blur rounded-2xl p-5 border border-stone-200 mb-8 text-left space-y-3 shadow-sm">
-        <div class="flex items-center gap-2.5 text-sm font-medium text-stone-800">
-          <span class="text-[#842A45] font-bold">✓</span> 1x Mulberry Cleansing Balm
+      <div class="max-w-sm mx-auto bg-white/90 backdrop-blur rounded-2xl p-6 border border-rose-100 mb-8 text-left space-y-3.5 shadow-sm">
+        <div class="flex items-center gap-3 text-sm font-semibold text-stone-800">
+          <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs">✓</span>
+          1x Mulberry Cleansing Balm (45ml)
         </div>
-        <div class="flex items-center gap-2.5 text-sm font-medium text-stone-800">
-          <span class="text-[#842A45] font-bold">✓</span> 1x Mugwort Daily Foam Cleanser
+        <div class="flex items-center gap-3 text-sm font-semibold text-stone-800">
+          <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs">✓</span>
+          1x Mugwort Daily Foam Cleanser (100ml)
         </div>
-        <div class="flex items-center gap-2.5 text-sm font-medium text-stone-800">
-          <span class="text-[#842A45] font-bold">✓</span> Formula Lembut & Hypoallergenic
+        <div class="flex items-center gap-3 text-sm font-semibold text-stone-800">
+          <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs">✓</span>
+          Formula Hypoallergenic & Bebas SLS/Paraben
         </div>
-        <div class="flex items-center gap-2.5 text-sm font-medium text-stone-800">
-          <span class="text-[#842A45] font-bold">✓</span> Percuma Spatula Balm Khas
+        <div class="flex items-center gap-3 text-sm font-semibold text-stone-800">
+          <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs">✓</span>
+          Percuma Spatula Balm Khas Higienik
         </div>
       </div>
 
-      <button onclick="alert('Terima kasih! Produk telah ditambah ke troli.')" class="w-full max-w-sm bg-[#3D1420] text-white py-4 rounded-full font-bold text-base shadow-xl shadow-[#3D1420]/30 hover:bg-[#5C1A2E] hover:scale-[1.02] active:scale-95 transition">
-        Tempah Set Sekarang
+      <button onclick="handlePurchase()" class="cta-pulse w-full max-w-sm bg-[#3D1420] text-white py-4 rounded-full font-extrabold text-lg shadow-xl shadow-[#3D1420]/30 hover:bg-[#5C1A2E] hover:scale-[1.02] active:scale-95 transition">
+        TEMPAH SET SEKARANG
       </button>
 
-      <p class="text-xs text-stone-500 mt-4">Jaminan Kualiti 100% Produk Tulen NUUHA Beauty</p>
+      <div class="flex items-center justify-center gap-6 mt-6 text-xs text-stone-500 font-medium">
+        <span>🔒 Pembayaran Selamat</span>
+        <span>•</span>
+        <span>⚡ Stok Sedia Ada</span>
+      </div>
     </div>
   </section>
 
-  <!-- 7. Footer -->
-  <footer class="border-t border-stone-200 py-8 text-center text-xs text-stone-500">
-    <p class="font-bold text-stone-700 mb-1">NUUHA BEAUTY OFFICIAL</p>
-    <p>© 2026 Hak Cipta Terpelihara. Landing Page dibina untuk Web Development Intern Assignment.</p>
+  <!-- 8. Interactive FAQ Accordion (Tunjuk Kemahiran JS!) -->
+  <section class="max-w-2xl mx-auto px-4 py-12">
+    <h3 class="text-2xl font-bold text-center text-stone-900 mb-6">Soalan Lazim (FAQ)</h3>
+    <div class="space-y-3">
+      <!-- FAQ 1 -->
+      <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
+        <button onclick="toggleFaq(1)" class="w-full text-left px-5 py-4 font-bold text-stone-800 flex justify-between items-center text-sm">
+          <span>Adakah Cleansing Balm ini sesuai untuk kulit berminyak?</span>
+          <span id="faq-icon-1" class="text-[#842A45] font-bold text-lg">+</span>
+        </button>
+        <div id="faq-answer-1" class="hidden px-5 pb-4 text-xs text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+          Sangat sesuai! Mengikut sains dermatologi, minyak melarutkan minyak (oil dissolves oil). Balm ini akan mencairkan sebum berlebihan di dalam pori tanpa mengeringkan kulit.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
+        <button onclick="toggleFaq(2)" class="w-full text-left px-5 py-4 font-bold text-stone-800 flex justify-between items-center text-sm">
+          <span>Bila waktu terbaik untuk buat Double Cleansing?</span>
+          <span id="faq-icon-2" class="text-[#842A45] font-bold text-lg">+</span>
+        </button>
+        <div id="faq-answer-2" class="hidden px-5 pb-4 text-xs text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+          Waktu terbaik ialah pada waktu malam (sebelum tidur) untuk membuang sisa sunscreen, makeup, habuk dan minyak selepas seharian beraktiviti. Pada waktu pagi, anda hanya perlu gunakan Cleanser sahaja.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
+        <button onclick="toggleFaq(3)" class="w-full text-left px-5 py-4 font-bold text-stone-800 flex justify-between items-center text-sm">
+          <span>Adakah produk ini selamat untuk kulit sensitif dan berjerawat?</span>
+          <span id="faq-icon-3" class="text-[#842A45] font-bold text-lg">+</span>
+        </button>
+        <div id="faq-answer-3" class="hidden px-5 pb-4 text-xs text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+          Ya, kedua-dua produk ini diformulasikan dengan Korean SRE Technology, bebas alkohol, paraben, wangian tiruan (fragrance-free) dan hypoallergenic, menjadikannya sangat selamat untuk kulit reaktif.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Footer -->
+  <footer class="border-t border-stone-200 bg-white py-10 text-center text-xs text-stone-500">
+    <p class="font-extrabold text-stone-800 text-sm tracking-wider mb-2">NUUHA BEAUTY</p>
+    <p class="mb-4">Landing Page dibangunkan untuk Web Development Internship Assignment.</p>
+    <p class="text-stone-400">© 2026 NUUHA Beauty. Hak Cipta Terpelihara.</p>
   </footer>
 
-  <!-- 8. Mobile Sticky Bottom CTA -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-white/95 backdrop-blur-md border-t border-stone-200 z-50 flex items-center justify-between shadow-lg">
+  <!-- 10. Sticky Bottom CTA (Mobile Exclusive) -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-white/95 backdrop-blur-md border-t border-stone-200 z-50 flex items-center justify-between shadow-2xl">
     <div>
-      <p class="text-[11px] font-semibold text-stone-400 leading-none">Pilihan Terbaik</p>
+      <p class="text-[10px] font-bold text-stone-400 uppercase tracking-wider">Set Pilihan Ramai</p>
       <p class="text-sm font-extrabold text-[#3D1420]">Double Cleanse Set</p>
     </div>
-    <a href="#offer" class="bg-[#3D1420] text-white px-6 py-2.5 rounded-full text-xs font-bold shadow-md active:scale-95 transition">
+    <a href="#offer" class="bg-[#3D1420] text-white px-6 py-2.5 rounded-full text-xs font-bold shadow-lg active:scale-95 transition">
       Beli Sekarang
     </a>
   </div>
 
+  <!-- JavaScript Logics -->
+  <script>
+    // 1. Live Countdown Timer Simulation
+    let totalSeconds = 2 * 3600 + 45 * 60 + 12;
+    setInterval(() => {
+      if (totalSeconds <= 0) totalSeconds = 3 * 3600;
+      totalSeconds--;
+      const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(totalSeconds % 60).padStart(2, '0');
+      const countdownEl = document.getElementById('countdown');
+      if (countdownEl) {
+        countdownEl.innerText = `${hours} : ${mins} : ${secs}`;
+      }
+    }, 1000);
+
+    // 2. Interactive FAQ Accordion
+    function toggleFaq(id) {
+      const answer = document.getElementById(`faq-answer-${id}`);
+      const icon = document.getElementById(`faq-icon-${id}`);
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.innerText = '−';
+      } else {
+        answer.classList.add('hidden');
+        icon.innerText = '+';
+      }
+    }
+
+    // 3. Purchase Action Feedback
+    function handlePurchase() {
+      alert("Tahniah! NUUHA Double Cleanse Set telah berjaya dimasukkan ke troli pesanan anda.");
+    }
+  </script>
 </body>
 </html>
